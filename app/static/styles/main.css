@@ -81,6 +81,12 @@ body {
     padding-left: 420px;
 }
 
+#jiya-anime-picture{
+    padding-right: 450px;
+    height: 350px;
+    padding: 30px;
+}
+
 a:hover{
     opacity: 0.8;
 }
@@ -103,3 +109,29 @@ a:hover{
     font-size: 50px;
     font-weight: 700;
 }
+
+#jiya-menu {
+    padding-left: 110px;
+    padding-top: 45px;
+    /* removes bullets */
+    list-style-type: 0;
+    width: 200px;
+
+}
+
+#jiya-menu-item {
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+    font-size: xx-large;
+    color: #ad262d;
+    display: block;
+    background-color: #ffcdd0;
+    padding: 5px;
+}
+
+a {
+    /* remove link underline */
+    text-decoration: none;
+}
+
+
