@@ -176,6 +176,24 @@ a {
 
 .flex-container{
     display: flex;
+    
+}
+
+#div-1, #div-2, #div-3{
+    width: 250px;
+    height: 270px;
+    padding: 10px;
+    background-color: #ffcdd0;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    left: 335px;
+    bottom: 250px;
+}
+
+#musicmapper, #digitalwallet, #innergarden{
+    width: 250px;
+    height: 270px;
 }
 
 
