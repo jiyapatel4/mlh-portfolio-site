@@ -21,12 +21,11 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Shrikhand&display=swap" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="jiya-bg">
     <div class="profile">
         <div id="jiya-anime-picture" class="profile-picture">
             <img src="./static/img/anime_hat_headshot.jpg">
@@ -34,11 +33,10 @@
 
     </div>
 
-    <div>
+    <div class="jiya-menu-bar">
         <!-- Nav/Menu bar = Unordered list -->
-
         <ul id="jiya-menu">
-            <a href="{{url_for('jiya_about')}}">
+            <a href="{{url_for('jiya_base')}}">
                 <li id="jiya-menu-item">About</li>
             </a>
             <a href="{{url_for('jiya_work')}}">
@@ -50,6 +48,12 @@
         </ul>
 
     </div>
+
+
+    <h1 id="jiya-about-title">Hi I'm Jiya,</h1>
+    <p id="jiya-about-text">a rising sophomore studying Computer Science at the University of Toronto.</p>
+
+
 
 </body>
 

@@ -3,6 +3,8 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
+import jinja2
+
 load_dotenv()
 # create Flask server (__name__ means the current file)
 app = Flask(__name__)
@@ -15,9 +17,9 @@ def index():
 
 # routes within Jiya's portfolio
 
-@app.route('/jiya_about')
-def jiya_about():
-    return render_template('jiya_about.html')
+@app.route('/jiya_base')
+def jiya_base():
+    return render_template('jiya_base.html')
 
 @app.route('/jiya_work')
 def jiya_work():
