@@ -1,6 +1,6 @@
 import os
 # import Flask module
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from dotenv import load_dotenv
 
 import jinja2
@@ -9,6 +9,11 @@ load_dotenv()
 # create Flask server (__name__ means the current file)
 app = Flask(__name__)
 
+# decorator registers function as a custom error handler
+@app.errorhandler(404)
+def page_not_found(error):
+    render_template('404.html'), 404
+
 # default page
 @app.route('/')
 def index():
@@ -16,7 +21,6 @@ def index():
     return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
 
 # routes within Jiya's portfolio
-
 @app.route('/jiya_base')
 def jiya_base():
     return render_template('jiya_base.html')
