@@ -2,7 +2,7 @@ p, h2, h3, h4, h5, h6, button {
     font-family: "Roboto", serif;
 }
 
-#jiya-about-title{
+#jiya-about-title, #jiya-hobbies-title{
     font-family: 'Shrikhand', cursive;
     font-size: 80px;
     text-align: center;
@@ -10,6 +10,21 @@ p, h2, h3, h4, h5, h6, button {
     right: 120px;
     bottom: 200px;
     color: #ad262d;
+    /* now navbar isn't obstructed */
+    pointer-events: none;
+}
+
+#jiya-work-title{
+    font-family: 'Shrikhand', cursive;
+    font-size: 80px;
+    text-align: center;
+    position: relative;
+    right: 60px;
+    bottom: 200px;
+    color: #ad262d;
+    /* now navbar isn't obstructed */
+    pointer-events: none;
+
 }
 
 #jiya-about-text{
@@ -157,6 +172,10 @@ a:hover{
 a {
     /* remove link underline */
     text-decoration: none;
+}
+
+.flex-container{
+    display: flex;
 }
 
 

@@ -28,12 +28,13 @@
 <body class="jiya-bg">
     <div class="profile">
         <div id="jiya-anime-picture" class="profile-picture">
-            <img src="./static/img/anime_hat_headshot.jpg" alt="An anime picture of Jiya">
+            <a href="{{url_for('index')}}"><img src="./static/img/anime_hat_headshot.jpg"
+                    alt="An anime picture of Jiya"></a>
         </div>
 
     </div>
 
-    <div class="jiya-menu-bar">
+    <span class="jiya-menu-bar">
         <!-- Nav/Menu bar = Unordered list -->
         <ul id="jiya-menu">
             <a href="{{url_for('jiya_base')}}">
@@ -47,7 +48,7 @@
             </a>
         </ul>
 
-    </div>
+    </span>
 
 
     <!-- defining what can be overridden -->
