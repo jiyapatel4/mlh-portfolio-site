@@ -191,9 +191,20 @@ a {
     bottom: 250px;
 }
 
-#musicmapper, #digitalwallet, #innergarden{
+#musicmapper, #digitalwallet, #innergarden, #catch22, #guitar, #anime{
     width: 250px;
     height: 270px;
+}
+
+
+#jiya-map{
+    width: 200x;
+    height: 250px;
+    position: relative;
+    right: 400px;
+    top: 120px;
+
+
 }
 
 
