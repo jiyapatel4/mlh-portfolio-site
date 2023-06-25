@@ -8,7 +8,7 @@ p, h2, h3, h4, h5, h6, button {
     text-align: center;
     position: relative;
     right: 120px;
-    bottom: 200px;
+    bottom: 300px;
     color: #ad262d;
     /* now navbar isn't obstructed */
     pointer-events: none;
@@ -20,7 +20,7 @@ p, h2, h3, h4, h5, h6, button {
     text-align: center;
     position: relative;
     right: 113px;
-    bottom: 200px;
+    bottom: 300px;
     color: #ad262d;
     /* now navbar isn't obstructed */
     pointer-events: none;
@@ -31,7 +31,7 @@ p, h2, h3, h4, h5, h6, button {
     font-family: 'Lora', serif;
     text-align: center;
     position: relative;
-    bottom: 260px;
+    bottom: 360px;
     font-size: 21px;
     color: #ffffff;
     left: 20px;
@@ -198,7 +198,7 @@ a {
     margin: 10px;
     position: relative;
     left: 335px;
-    bottom: 250px;
+    bottom: 360px;
 }
 
 #musicmapper, #digitalwallet, #innergarden, #catch22, #guitar, #anime{
@@ -212,7 +212,19 @@ a {
     height: 250px;
     position: relative;
     right: 400px;
-    top: 120px;
+}
+
+#jiya-github{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: 115px;
+}
+#jiya-linkedin{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: 125px;
 }
 
 
