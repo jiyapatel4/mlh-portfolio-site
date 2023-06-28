@@ -1,192 +1,197 @@
-p, h2, h3, h4, h5, h6, button {
-    font-family: "Roboto", serif;
+p,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Roboto", serif;
 }
 
-#chizy-about-title, #chizy-hobbies-title{
-    font-family: 'Shrikhand', cursive;
-    font-size: 80px;
-    text-align: center;
-    position: relative;
-    right: 120px;
-    bottom: 300px;
-    color: #ad262d;
-    /* now navbar isn't obstructed */
-    pointer-events: none;
+#chizy-about-title,
+#chizy-hobbies-title {
+  font-family: "Shrikhand", cursive;
+  font-size: 80px;
+  text-align: center;
+  position: relative;
+  right: 120px;
+  bottom: 300px;
+  color: #ad262d;
+  /* now navbar isn't obstructed */
+  pointer-events: none;
 }
 
-#chizy-work-title{
-    font-family: 'Shrikhand', cursive;
-    font-size: 80px;
-    text-align: center;
-    position: relative;
-    right: 113px;
-    bottom: 300px;
-    color: #ad262d;
-    /* now navbar isn't obstructed */
-    pointer-events: none;
-
+#chizy-work-title {
+  font-family: "Shrikhand", cursive;
+  font-size: 80px;
+  text-align: center;
+  position: relative;
+  right: 113px;
+  bottom: 300px;
+  color: #ad262d;
+  /* now navbar isn't obstructed */
+  pointer-events: none;
 }
 
-#chizy-about-text{
-    font-family: 'Lora', serif;
-    text-align: center;
-    position: relative;
-    bottom: 360px;
-    font-size: 21px;
-    color: #ffffff;
-    left: 20px;
+#chizy-about-text {
+  font-family: "Lora", serif;
+  text-align: center;
+  position: relative;
+  bottom: 360px;
+  font-size: 21px;
+  color: #ffffff;
+  left: 20px;
 }
 
 body {
-    background-color: #f5f5f9;
-    background-size: cover;
-    width: auto; 
-    overflow-x: hidden;
-    font-family: "Roboto", serif;
-    margin: 0px;
+  background-color: #f5f5f9;
+  background-size: cover;
+  width: auto;
+  overflow-x: hidden;
+  font-family: "Roboto", serif;
+  margin: 0px;
 }
 
-.chizy-bg{
-    background-color: #292929;
-
+.chizy-bg {
+  background-color: #292929;
 }
 
 .nav-bar {
-    width: 100%;
-    display: inline-block;
-    background-color: #1C539F;
-    font-family: "Roboto", serif;
-    font-weight: 700 !important;
-    padding-top: 10px;
+  width: 100%;
+  display: inline-block;
+  background-color: #1c539f;
+  font-family: "Roboto", serif;
+  font-weight: 700 !important;
+  padding-top: 10px;
 }
 
 .nav-content .logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
+  display: inline-flex;
+  height: 60%;
+  width: 350px;
 }
 
 .nav-content .nav-logo {
-    height: 60px;
-    margin: auto;
+  height: 60px;
+  margin: auto;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-logo img {
-    width: 200px;
+  width: 200px;
 }
 
 .nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding-top: 0px;
+  padding-right: 0px;
 }
 
 .profile {
-    background-color: #1d539f !important;
-    text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
+  background-color: #1d539f !important;
+  text-align: center;
+  height: 320px;
+  margin-bottom: 50px;
 }
 
 .profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
 }
 
 .profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        padding: 20px;
-        position: relative;
-        right: 370px;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 20px;
+  position: relative;
+  right: 370px;
 }
 
 .profile-anime img {
-    border-radius: 50%;
-    max-width: 100%;
-    max-height: 100%;
-    padding: 20px;
-    position: relative;
-    left: 470px;
+  border-radius: 30%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 20px;
+  position: relative;
+  left: 470px;
 }
 
 .profile .profile-picture {
-    background-color: #1d539f;
-    margin-bottom: 30px;
-    height: 200px;
+  background-color: #1d539f;
+  margin-bottom: 30px;
+  height: 200px;
 }
 
-
-#chizy-profile-picture{
-    padding-left: 420px;
+#chizy-profile-picture {
+  padding-left: 420px;
 }
 
-#chizy-reading-picture{
-    background-color: #ffcdd0;
-    padding-right: 450px;
-    height: 350px;
-    padding: 30px;
+#chizy-reading-picture {
+  background-color: #ffcdd0;
+  padding-right: 450px;
+  height: 350px;
+  padding: 30px;
 }
 
-a:hover{
-    opacity: 0.8;
+a:hover {
+  opacity: 0.8;
 }
 
 .banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #1d539f;
+  padding: 20px 0px 50px 0px;
+  height: 150px;
+  background-color: #1d539f;
 }
 
 .banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
 }
 
 .banner .title {
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 #chizy-menu {
-    padding-left: 110px;
-    padding-top: 20px;
-    /* removes bullets */
-    list-style-type: 0;
-    width: 200px;
+  padding-left: 110px;
+  padding-top: 20px;
+  /* removes bullets */
+  list-style-type: 0;
+  width: 200px;
 }
 
-#chizy-menu-item-1, #chizy-menu-item-2, #chizy-menu-item-3  {
-    font-family: 'Shrikhand', cursive;
-    text-align: center;
-    font-size: xx-large;
-    color: #ad262d;
-    display: block;
-    background-color: #ffcdd0;
-    padding: 5px;
+#chizy-menu-item-1,
+#chizy-menu-item-2,
+#chizy-menu-item-3 {
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+  font-size: xx-large;
+  color: #ad262d;
+  display: block;
+  background-color: #ffcdd0;
+  padding: 5px;
 }
 
 a {
-    /* remove link underline */
-    text-decoration: none;
+  /* remove link underline */
+  text-decoration: none;
 }
 
-.flex-container{
-    display: flex;
-    
+.flex-container {
+  display: flex;
 }
 
 /* #div-1, #div-2, #div-3{
@@ -214,34 +219,41 @@ a {
     right: 400px;
 } */
 
-#div-1 img, #div-2 img, #div-3 img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+#div-1 img,
+#div-2 img,
+#div-3 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-#musicmapper, #digitalwallet, #innergarden, #catch22, #guitar, #anime {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+#musicmapper,
+#digitalwallet,
+#innergarden,
+#catch22,
+#guitar,
+#anime {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-#chizy-map{
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    right: 400px;
+#chizy-map {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  right: 400px;
 }
 
-#chizy-github{
-    width: 90px;
-    height: 90px;
-    position: relative;
-    left: 115px;
+#chizy-github {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  left: 115px;
 }
-#chizy-linkedin{
-    width: 90px;
-    height: 90px;
-    position: relative;
-    left: 125px;
+#chizy-linkedin {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  left: 125px;
 }
