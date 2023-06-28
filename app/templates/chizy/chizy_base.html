@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link lang='sass' rel="stylesheet" href="./static/styles/main_chizy.css">
+    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <title>{{ title }}</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Shrikhand&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="chizy-bg">
+    <div class="profile-anime">
+        <div id="chizy-reading-picture" class="profile-picture">
+            <a href="{{url_for('index')}}"><img src="./static/img/chizy/chizy_reading.jpg"
+                    alt="A picture of Chizy reading"></a>
+        </div>
+
+    </div>
+
+    <span class="chizy-menu-bar">
+        <!-- Nav/Menu bar = Unordered list -->
+        <ul id="chizy-menu">
+            <a href="{{url_for('chizy_base')}}">
+                <li id="chizy-menu-item-1">About</li>
+            </a>
+            <a href="{{url_for('chizy_work')}}">
+                <li id="chizy-menu-item-2">Work</li>
+            </a>
+            <a href="{{url_for('chizy_hobbies')}}">
+                <li id="chizy-menu-item-3">Hobbies</li>
+            </a>
+        </ul>
+
+    </span>
+
+    <a href="https://github.com/chizy7"><img id="chizy-github" src="./static/img/github.png" alt="github logo"></a>
+    <a href="https://www.linkedin.com/in/chizaram-chibueze/"><img id="chizy-linkedin" src="./static/img/linkedin.png"
+            alt="linkedin logo"></a>
+
+    <!-- defining what can be overridden -->
+    {% block title %}
+    <h1 id="chizy-about-title">Hi I'm Chizy,</h1>
+    {% endblock title %}
+
+    {% block content %}
+    <p id="chizy-about-text">a senior at Hunter CS. A mobile and backend engineer.</p>
+
+    {% endblock content %}
+
+</body>
+
+</html>
