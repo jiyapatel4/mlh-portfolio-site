@@ -2,7 +2,7 @@ import os
 # import Flask module
 from flask import Flask, render_template, request, abort
 from dotenv import load_dotenv
-
+from peewee import *
 
 import jinja2
 
@@ -10,9 +10,18 @@ load_dotenv()
 # create Flask server (__name__ means the current file)
 app = Flask(__name__)
 
+# MySQLDatabase is a funtion from peewee that lets us connect to the database
+mydb = MySQLDatabase(os.getenv("MY_DATABASE"),
+              user=os.getenv("MYSQL_USER"),
+              password=os.getenv("MYSQL_PASSWORD"),
+              host=os.getenv("MYSQL_HOST"),
+              port=3306              
+        )
+
+print(mydb)
+
+
 # decorator registers function as a custom error handler
-
-
 @app.errorhandler(404)
 def page_not_found(error):
     render_template('404.html'), 404
