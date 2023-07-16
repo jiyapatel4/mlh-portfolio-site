@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      form {
+        margin-bottom: 1em;
+      }
+      input[type="text"],
+      textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5em;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 0.5em;
+        cursor: pointer;
+      }
+      .timeline-post {
+        margin-bottom: 1em;
+        padding: 0.5em;
+        background-color: #f2f2f2;
+        border-radius: 4px;
+      }
+      .timeline-post h4 {
+        margin-top: 0;
+      }
+      .timeline-post img {
+        float: left;
+        margin-right: 1em;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <form id="timeline-form">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+      <label for="content">Content:</label>
+      <textarea name="content" id="content" required></textarea>
+      <input type="submit" value="Post">
+    </form>
+    <div id="timeline-posts"></div>
+    <script>
+      const timelineForm = document.getElementById('timeline-form');
+      const timelinePosts = document.getElementById('timeline-posts');
+
+      // Helper function to create a timeline post element
+      function createTimelinePostElement(post) {
+        const element = document.createElement('div');
+        element.classList.add('timeline-post');
+        const img = document.createElement('img');
+        img.src = `https://www.gravatar.com/avatar/${post.emailHash}?s=50`;
+        img.alt = post.name;
+        const h4 = document.createElement('h4');
+        h4.innerText = post.name;
+        const p = document.createElement('p');
+        p.innerText = post.content;
+        element.appendChild(img);
+        element.appendChild(h4);
+        element.appendChild(p);
+        return element;
+      }
+
+      // Fetch and display timeline posts on page load
+      fetch('/api/timeline_post')
+        .then(res => res.json())
+        .then(data => {
+          timelinePosts.innerHTML = '';
+          data.timeline_posts.forEach(post => {
+            const element = createTimelinePostElement(post);
+            timelinePosts.appendChild(element);
+          });
+        });
+
+      // Handle form submission to create a new timeline post
+      timelineForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const formData = new FormData(timelineForm);
+        fetch('/api/timeline_post', {
+          method: 'POST',
+          body: formData
+        })
+          .then(res => res.json())
+          .then(data => {
+            const element = createTimelinePostElement(data);
+            timelinePosts.prepend(element);
+            timelineForm.reset();
+          });
+      });
+    </script>
+  </body>
+</html>

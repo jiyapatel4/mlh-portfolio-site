@@ -71,6 +71,10 @@ def chizy_work():
 def chizy_hobbies():
     return render_template('chizy/chizy_hobbies.html', title="Chizy's Hobbies", url=os.getenv("URL"))
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_timeline_post():
     name = request.form['name']
