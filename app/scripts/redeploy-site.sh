@@ -1,7 +1,5 @@
-#!/bin/bash
+#!/bin/bash -x
 # MLH PE work
-set -e
-set -x
 
 # Kill all existing tmux sessions
 tmux kill-server
