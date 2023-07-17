@@ -1,8 +1,4 @@
-#!/bin/bash -x
-# MLH PE work
-
-# Kill all existing tmux sessions
-tmux kill-server
+#!/bin/bash
 
 cd /root/mlh-portfolio-site
 
@@ -13,7 +9,8 @@ git fetch && git reset origin/main --hard
 source python3-virtualenv/bin/activate
 pip install -r requirements.txt
 
-# Start a new detached Tmux session in the project directory
-tmux new-session -d -s myproject 'cd /root/mlh-portfolio-site && source python3-virtualenv/bin/activate && export FLASK_ENV=production && flask run --host=0.0.0.0'
+# Systemctl
+systemctl daemon-reload
+systemctl restart myportfolio.service
 
-echo "Deployment complete."
+echo "Complete."
