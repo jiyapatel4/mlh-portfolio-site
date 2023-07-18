@@ -249,3 +249,30 @@ a {
   position: relative;
   left: 125px;
 }
+
+#form {
+  bottom: 350px;
+  display: flex;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  left: 350px;
+}
+
+#name,
+#email,
+#content {
+  margin: 5px;
+}
+
+#jiya_button {
+  margin: 5px;
+  position: relative;
+  top: 20px;
+}
+
+#jiya_label1,
+#jiya_label2,
+#jiya_label3 {
+  color: white;
+}
