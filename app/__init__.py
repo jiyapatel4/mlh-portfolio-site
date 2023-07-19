@@ -17,7 +17,7 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
               user=os.getenv("MYSQL_USER"),
               password=os.getenv("MYSQL_PASSWORD"),
               host=os.getenv("MYSQL_HOST"),
-              port=3306              
+              port=3306         
         )
 
 print(mydb)
@@ -43,16 +43,12 @@ def page_not_found(error):
     render_template('404.html'), 404
 
 # default page
-
-
 @app.route('/')
 def index():
     # render_template(): searches for specified template and renders it
     return render_template('index.html', title="MLH Fellows", url=os.getenv("URL"))
 
 # routes within Jiya's portfolio
-
-
 @app.route('/jiya_base')
 def jiya_base():
     return render_template('jiya/jiya_base.html', title="About Jiya", url=os.getenv("URL"))
