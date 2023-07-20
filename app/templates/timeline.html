@@ -3,10 +3,11 @@
 {% block title %}
 <!-- public timeline where we can post updates in our school & career journey.  -->
     <h1 id="jiya-hobbies-title">My timeline,</h1>
+
 {% endblock title %}
 
 {% block content %}
-
+    <!-- create an HTML form to collect field values to make the POST request  -->
     <form id="form">
         
         <div>
@@ -25,61 +26,69 @@
         </div>
     
         <div>
-            <button type="submit">Submit</button>
+            <button id="submit" type="submit">Submit</button>
         </div>
         
     </form> 
 
-    <ul></ul>
-
+    <ul id="posts"></ul>
 
     <script>
+        // access the form object via its id
         const form = document.getElementById('form')
+        // listen for the form submit button click
         form.addEventListener('submit', function(e) {
             // prevent default HTML submission of form
             e.preventDefault();
             
-            // converts form elements to array data
-            const prePayload = new FormData(form);
-            const payload= new URLSearchParams(prePayload); 
+            // FormData is an object constructor which takes each form element and converts it to an array
+            const payload = new FormData(form);
             console.log([...payload])
             
-            // issue the POST request?
+            // send form data as a POST request using fetch API
             fetch('http://127.0.0.1:5000/api/timeline_post', {
                 method: "POST",
                 body: payload,
             })
+                // convert the response to JSON            
                 .then(res => res.json())
-                .then(data => console.log(data))
+                // error handling
                 .catch(err => console.log(err)); 
+            // reoload window each time a POST request is made so it displays on the timeline page
+            window.location.reload()            
 
         })
-
-
-       
 
     </script>
 
     <script>
-        // GET request
+        function getRequest(){
+        // GET request to API
         fetch('http://127.0.0.1:5000/api/timeline_post')
             .then(res => {
+                // convert and return the response in JSON
                 return res.json();
-                // console.log(res);
-
             })
             .then(data => {
-                // parses JSON string to create JS
-             
-                // console.log(data);
-                for (const user in data) {
-                    console.log(user.name)
-                    const markup = `<li>${user}</li>`;
-                    document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
-                }
+                // parse through each item from the GET request and access the name, email, and content form fields
+                data.timeline_posts.forEach(user => {
+                    // create new div element
+                    const new_timeline_node = document.createElement("div");
+                    new_timeline_node.setAttribute("class", "timeline_style")
+                    //creating text to insert into the div tag
+                    const new_timeline_text = document.createTextNode(`Name: ${user.name} | Email: ${user.email} | ${user.content}`);
+                    // appending the text to the new div element/node
+                    new_timeline_node.appendChild(new_timeline_text);
+                    // access the unordered list via its id
+                    const list_timeline = document.getElementById("posts");
+                    // insert the new div element before any child in the unordered list
+                    list_timeline.insertBefore(new_timeline_node, list_timeline.children[0]);
+                });
 
             })
-            .catch(error => console.log(error));
+        }
+        getRequest()
     </script>
+
 
 {% endblock content %}

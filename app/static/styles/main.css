@@ -257,6 +257,7 @@ a {
   height: 90px;
   position: relative;
   left: 350px;
+  font-family: "Lora", serif;
 }
 
 #name,
@@ -265,7 +266,7 @@ a {
   margin: 5px;
 }
 
-#jiya_button {
+#submit {
   margin: 5px;
   position: relative;
   top: 20px;
@@ -275,4 +276,25 @@ a {
 #jiya_label2,
 #jiya_label3 {
   color: white;
+}
+
+#posts {
+  position: relative;
+  left: 310px;
+  color: #ffcdd0;
+  bottom: 375px;
+  display: flex;
+  font-family: "Lora", serif;
+  /* items displayed in the opposite direction */
+  flex-direction: column-reverse;
+  font-size: large;
+}
+
+.timeline_style {
+  width: fit-content;
+  height: fit-content;
+  margin: 5px;
+  padding-left: 0;
+  background-color: #383737;
+  border-radius: 10px;
 }
