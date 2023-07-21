@@ -15,9 +15,9 @@ app = Flask(__name__)
 # use MySQLDatabase class to connect with a MySQL database on network
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
               user=os.getenv("MYSQL_USER"),
-              password=os.getenv("MYSQL_PASSWORD"),
-              host=os.getenv("MYSQL_HOST"),
-              port=3306         
+              password=os.getenv("MYSQL_PASSWORD")
+            #   host=os.getenv("MYSQL_HOST"),
+            #   port=3306         
         )
 
 print(mydb)
