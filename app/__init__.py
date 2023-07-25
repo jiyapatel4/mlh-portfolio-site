@@ -22,6 +22,7 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 
 print(mydb)
 
+# I am a Test PR that will be deleted
 
 # fields in database table
 class TimelinePost(Model):
