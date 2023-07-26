@@ -1,7 +1,7 @@
 import os
 import jinja2
 import datetime
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template, request, abort, jsonify
 from dotenv import load_dotenv
 # from peewee import MySQLDatabase
 from peewee import *
@@ -11,11 +11,15 @@ load_dotenv()
 # create Flask server (__name__ means the current file)
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                     user=os.getenv("MYSQL_USER"),
-                     password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"),
-                     port=3306)
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306)
 
 print(mydb)
 
@@ -77,12 +81,24 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_timeline_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    name = request.json.get('name')
+    email = request.json.get('email')
+    content = request.json.get('content')
 
-    return model_to_dict(timeline_post)
+    # Validate the name
+    if not name:
+        return jsonify({"error": "Invalid name"}), 400
+    
+    # Validate the email
+    if not email or '@' not in email:
+        return jsonify({"error": "Invalid email"}), 400
+    
+    # Validate the content
+    if not content:
+        return jsonify({"error": "Invalid content"}), 400
+
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    return jsonify(model_to_dict(timeline_post))
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
