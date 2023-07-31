@@ -186,7 +186,8 @@ a:hover {
 
 #jiya-menu-item-1,
 #jiya-menu-item-2,
-#jiya-menu-item-3 {
+#jiya-menu-item-3,
+#jiya-menu-item-4 {
   font-family: "Shrikhand", cursive;
   text-align: center;
   font-size: xx-large;
@@ -247,4 +248,53 @@ a {
   height: 90px;
   position: relative;
   left: 125px;
+}
+
+#form {
+  bottom: 350px;
+  display: flex;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  left: 350px;
+  font-family: "Lora", serif;
+}
+
+#name,
+#email,
+#content {
+  margin: 5px;
+}
+
+#submit {
+  margin: 5px;
+  position: relative;
+  top: 20px;
+}
+
+#jiya_label1,
+#jiya_label2,
+#jiya_label3 {
+  color: white;
+}
+
+#posts {
+  position: relative;
+  left: 310px;
+  color: #ffcdd0;
+  bottom: 375px;
+  display: flex;
+  font-family: "Lora", serif;
+  /* items displayed in the opposite direction */
+  flex-direction: column-reverse;
+  font-size: large;
+}
+
+.timeline_style {
+  width: fit-content;
+  height: fit-content;
+  margin: 5px;
+  padding-left: 0;
+  background-color: #383737;
+  border-radius: 10px;
 }

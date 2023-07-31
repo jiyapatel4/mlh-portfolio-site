@@ -1,0 +1,94 @@
+{% extends "jiya/jiya_base.html" %}
+
+{% block title %}
+<!-- public timeline where we can post updates in our school & career journey.  -->
+    <h1 id="jiya-hobbies-title">My timeline,</h1>
+
+{% endblock title %}
+
+{% block content %}
+    <!-- create an HTML form to collect field values to make the POST request  -->
+    <form id="form">
+        
+        <div>
+            <label id="jiya_label1" for="name"> Enter your name: </label>
+            <input name="name" type="text" id="name" autocomplete="on">
+        </div>
+
+        <div>
+            <label id="jiya_label2" for="mail"> Enter your email: </label>
+            <input name="email" type="email" id="email" autocomplete="on">
+        </div>
+    
+        <div>
+            <label id="jiya_label3" for="content"> Enter your content: </label>
+            <input name="content" type="text" id="content" autocomplete="on">
+        </div>
+    
+        <div>
+            <button id="submit" type="submit">Submit</button>
+        </div>
+        
+    </form> 
+
+    <ul id="posts"></ul>
+
+    <script>
+        // access the form object via its id
+        const form = document.getElementById('form')
+        // listen for the form submit button click
+        form.addEventListener('submit', function(e) {
+            // prevent default HTML submission of form
+            e.preventDefault();
+            
+            // FormData is an object constructor which takes each form element and converts it to an array
+            const payload = new FormData(form);
+            console.log([...payload])
+            
+            // send form data as a POST request using fetch API
+            fetch('http://127.0.0.1:5000/api/timeline_post', {
+                method: "POST",
+                body: payload,
+            })
+                // convert the response to JSON            
+                .then(res => res.json())
+                // error handling
+                .catch(err => console.log(err)); 
+            // reoload window each time a POST request is made so it displays on the timeline page
+            window.location.reload()            
+
+        })
+
+    </script>
+
+    <script>
+        function getRequest(){
+        // GET request to API
+        fetch('http://127.0.0.1:5000/api/timeline_post')
+            .then(res => {
+                // convert and return the response in JSON
+                return res.json();
+            })
+            .then(data => {
+                // parse through each item from the GET request and access the name, email, and content form fields
+                data.timeline_posts.forEach(user => {
+                    // create new div element
+                    const new_timeline_node = document.createElement("div");
+                    new_timeline_node.setAttribute("class", "timeline_style")
+                    //creating text to insert into the div tag
+                    const new_timeline_text = document.createTextNode(`Name: ${user.name} | Email: ${user.email} | ${user.content}`);
+                    // appending the text to the new div element/node
+                    new_timeline_node.appendChild(new_timeline_text);
+                    // access the unordered list via its id
+                    const list_timeline = document.getElementById("posts");
+                    // insert the new div element before any child in the unordered list
+                    list_timeline.insertBefore(new_timeline_node, list_timeline.children[0]);
+                });
+
+            })
+        }
+        getRequest()
+    </script>
+
+
+{% endblock content %}
